@@ -1,0 +1,47 @@
+- Spring Hibernate
+    - A framework for persisting/saving Java objects in a database
+    -
+
+    app -----> hibernate -----> database
+        <-----           <-----
+
+    - Benefits
+        - Hibernates handles all low level SQl
+        - Minimizes all low amount jdbc code
+        - Hibernate provides Object to relational mapping(ORM) by mapping Java class with database table.
+
+    - How hibernate relates to JDBC
+        - Hibernate uses JDBC for all database communications
+        - means hibernate is just a layer above JDBC
+
+    S1. configure hibernate using xml or without using xml
+    s2. mapping database table to code. can be done using 2 methods
+        - XML Config file (Legacy)
+        - Java annotation(modern)
+
+    - JPA is a standard specification. Hibernate is an implementation of the JPA specification.
+
+      Hibernate implements all of the JPA annotations.
+
+      The Hibernate team recommends the use of JPA annotations as a best practice.
+
+    - Can Hibernate generate database tables based on the Java code?
+      Answer:
+
+      Yes, you can generate database tables from Java code. Here's a tutorial that shows you how.
+
+    - Two Key Players :
+    1. SessionFactory
+    Reads the hibernate config file, create session objects, heavy weight object and only create once in a app.
+
+    2. Session
+    Wraps a jdbc connection, main object to save and retrieve objects, short lived objects and retrieved from
+     session factory.
+
+     - In logs change Hibernate: insert into student (email, first_name, last_name, id) values (?, ?, ?, ?)
+     change ? to  values sol. using log4j.properties file.
+
+   - Database concepts
+   1. one to one mapping
+   2. cascade operations
+   3. Eager vs Lazy loading while fetching data from database.
